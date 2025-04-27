@@ -31,7 +31,7 @@ const Navbar = () => {
       isScrolled ? 'bg-white/95 shadow-md backdrop-blur-sm py-3' : 'bg-transparent py-5'
     }`}>
       <div className="container mx-auto flex justify-between items-center">
-        <a href="#" className="flex items-center">
+        <a href="/" className="flex items-center">
           <span className="text-2xl font-heading font-bold text-health-700">
             ThinkFront<span className="text-mint-600">Health</span>
           </span>
@@ -47,6 +47,15 @@ const Navbar = () => {
           </a>
           <a href="#team" className="font-medium text-gray-700 hover:text-health-600 transition-colors">
             Team
+          </a>
+          <a href="/blog" className="font-medium text-gray-700 hover:text-health-600 transition-colors">
+            Blog
+          </a>
+          <a href="/news" className="font-medium text-gray-700 hover:text-health-600 transition-colors">
+            News
+          </a>
+          <a href="/events" className="font-medium text-gray-700 hover:text-health-600 transition-colors">
+            Events
           </a>
           <a href="#contact" className="font-medium text-gray-700 hover:text-health-600 transition-colors">
             Contact
@@ -99,6 +108,27 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Team
+            </a>
+            <a 
+              href="/blog" 
+              className="px-4 py-2 font-medium text-gray-700 hover:text-health-600 hover:bg-gray-50"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Blog
+            </a>
+            <a 
+              href="/news" 
+              className="px-4 py-2 font-medium text-gray-700 hover:text-health-600 hover:bg-gray-50"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              News
+            </a>
+            <a 
+              href="/events" 
+              className="px-4 py-2 font-medium text-gray-700 hover:text-health-600 hover:bg-gray-50"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Events
             </a>
             <a 
               href="#contact" 
