@@ -36,7 +36,6 @@ const Navbar = () => {
           </span>
         </a>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
           <a href="#skills" className="font-medium text-gray-700 hover:text-purple-600 transition-colors">
             Skills
@@ -55,14 +54,12 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* CTA Button */}
         <div className="hidden md:block">
           <Button className="bg-purple-600 hover:bg-purple-700">
             Get in Touch
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           type="button"
           className="md:hidden text-gray-700"
@@ -77,7 +74,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md py-4">
           <div className="container mx-auto flex flex-col space-y-4">
