@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -32,40 +31,34 @@ const Navbar = () => {
     }`}>
       <div className="container mx-auto flex justify-between items-center">
         <a href="/" className="flex items-center">
-          <span className="text-2xl font-heading font-bold text-health-700">
-            ThinkFront<span className="text-mint-600">Health</span>
+          <span className="text-2xl font-heading font-bold text-purple-700">
+            Rahel<span className="text-pink-600">Melese</span>
           </span>
         </a>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          <a href="#services" className="font-medium text-gray-700 hover:text-health-600 transition-colors">
-            Services
+          <a href="#skills" className="font-medium text-gray-700 hover:text-purple-600 transition-colors">
+            Skills
           </a>
-          <a href="#about" className="font-medium text-gray-700 hover:text-health-600 transition-colors">
+          <a href="#about" className="font-medium text-gray-700 hover:text-purple-600 transition-colors">
             About
           </a>
-          <a href="#team" className="font-medium text-gray-700 hover:text-health-600 transition-colors">
-            Team
+          <a href="/projects" className="font-medium text-gray-700 hover:text-purple-600 transition-colors">
+            Projects
           </a>
-          <a href="/blog" className="font-medium text-gray-700 hover:text-health-600 transition-colors">
+          <a href="/blog" className="font-medium text-gray-700 hover:text-purple-600 transition-colors">
             Blog
           </a>
-          <a href="/news" className="font-medium text-gray-700 hover:text-health-600 transition-colors">
-            News
-          </a>
-          <a href="/events" className="font-medium text-gray-700 hover:text-health-600 transition-colors">
-            Events
-          </a>
-          <a href="#contact" className="font-medium text-gray-700 hover:text-health-600 transition-colors">
+          <a href="#contact" className="font-medium text-gray-700 hover:text-purple-600 transition-colors">
             Contact
           </a>
         </div>
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Button className="bg-health-600 hover:bg-health-700">
-            Schedule Consultation
+          <Button className="bg-purple-600 hover:bg-purple-700">
+            Get in Touch
           </Button>
         </div>
 
@@ -89,57 +82,43 @@ const Navbar = () => {
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md py-4">
           <div className="container mx-auto flex flex-col space-y-4">
             <a 
-              href="#services" 
-              className="px-4 py-2 font-medium text-gray-700 hover:text-health-600 hover:bg-gray-50"
+              href="#skills" 
+              className="px-4 py-2 font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Services
+              Skills
             </a>
             <a 
               href="#about" 
-              className="px-4 py-2 font-medium text-gray-700 hover:text-health-600 hover:bg-gray-50"
+              className="px-4 py-2 font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
             </a>
             <a 
-              href="#team" 
-              className="px-4 py-2 font-medium text-gray-700 hover:text-health-600 hover:bg-gray-50"
+              href="/projects" 
+              className="px-4 py-2 font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Team
+              Projects
             </a>
             <a 
               href="/blog" 
-              className="px-4 py-2 font-medium text-gray-700 hover:text-health-600 hover:bg-gray-50"
+              className="px-4 py-2 font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
               onClick={() => setMobileMenuOpen(false)}
             >
               Blog
             </a>
             <a 
-              href="/news" 
-              className="px-4 py-2 font-medium text-gray-700 hover:text-health-600 hover:bg-gray-50"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              News
-            </a>
-            <a 
-              href="/events" 
-              className="px-4 py-2 font-medium text-gray-700 hover:text-health-600 hover:bg-gray-50"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Events
-            </a>
-            <a 
               href="#contact" 
-              className="px-4 py-2 font-medium text-gray-700 hover:text-health-600 hover:bg-gray-50"
+              className="px-4 py-2 font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
             </a>
             <div className="px-4 py-2">
-              <Button className="w-full bg-health-600 hover:bg-health-700">
-                Schedule Consultation
+              <Button className="w-full bg-purple-600 hover:bg-purple-700">
+                Get in Touch
               </Button>
             </div>
           </div>
