@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import Navbar from "@/components/Navbar";
 
 const Projects = () => {
   const projects = [
@@ -78,82 +79,85 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-24">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">My Projects</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Here are some of the projects I've worked on. Each project demonstrates different aspects of my technical skills and problem-solving abilities.
-          </p>
-        </div>
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-gray-50 py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">My Projects</h1>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Here are some of the projects I've worked on. Each project demonstrates different aspects of my technical skills and problem-solving abilities.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {currentProjects.map((project, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover rounded-t-lg mb-4"
-                />
-                <CardTitle className="text-xl">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="secondary">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-purple-600 hover:text-purple-800 font-medium"
-                >
-                  View Project →
-                </a>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {currentProjects.map((project, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+                <CardHeader>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover rounded-t-lg mb-4"
+                  />
+                  <CardTitle className="text-xl">{project.title}</CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, techIndex) => (
+                      <Badge key={techIndex} variant="secondary">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-purple-600 hover:text-purple-800 font-medium"
+                  >
+                    View Project →
+                  </a>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
 
-        <div className="flex justify-center items-center gap-4 mt-12">
-          <Button
-            variant="outline"
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-            className="flex items-center gap-2"
-          >
-            <ChevronLeft className="h-4 w-4" />
-            Previous
-          </Button>
-          
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+          <div className="flex justify-center items-center gap-4 mt-12">
             <Button
-              key={pageNum}
-              variant={currentPage === pageNum ? "default" : "outline"}
-              onClick={() => handlePageChange(pageNum)}
-              className="w-10 h-10"
+              variant="outline"
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="flex items-center gap-2"
             >
-              {pageNum}
+              <ChevronLeft className="h-4 w-4" />
+              Previous
             </Button>
-          ))}
+            
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+              <Button
+                key={pageNum}
+                variant={currentPage === pageNum ? "default" : "outline"}
+                onClick={() => handlePageChange(pageNum)}
+                className="w-10 h-10"
+              >
+                {pageNum}
+              </Button>
+            ))}
 
-          <Button
-            variant="outline"
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-            className="flex items-center gap-2"
-          >
-            Next
-            <ChevronRight className="h-4 w-4" />
-          </Button>
+            <Button
+              variant="outline"
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="flex items-center gap-2"
+            >
+              Next
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
